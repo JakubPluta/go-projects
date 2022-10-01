@@ -3,13 +3,15 @@
 import React from "react";
 import "./App.css";
 import { Container } from "semantic-ui-react";
-import ToDoList from "./components/ToDoList";
+import TodoList from "./components/TodoList";
 
 const App = () => {
   return (
-    <Container>
-      <ToDoList />
-    </Container>
+    <div>
+      <Container>
+        <TodoList />
+      </Container>
+    </div>
   );
 };
 
