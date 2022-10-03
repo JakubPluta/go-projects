@@ -3,10 +3,10 @@
 import React from "react";
 import "./App.css";
 import { connect, sendMessage } from "./api";
-import { useEffect } from "react";
 import Header from "./components/Header/Header";
 import ChatHistory from "./components/ChatHistory";
 import { Component } from "react";
+import ChatInput from "./components/ChatInput";
 
 class App extends Component {
   constructor(props) {
@@ -26,9 +26,11 @@ class App extends Component {
     });
   }
 
-  send() {
-    console.log("hello");
-    sendMessage("hello");
+  send(event) {
+    if (event.keyCode === 13) {
+      sendMessage(event.target.value);
+      event.target.value = "";
+    }
   }
 
   render() {
@@ -36,7 +38,7 @@ class App extends Component {
       <div className="App">
         <Header />
         <ChatHistory chatHistory={this.state.chatHistory} />
-        <button onClick={this.send}>Hit</button>
+        <ChatInput send={this.send} />
       </div>
     );
   }
