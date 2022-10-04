@@ -1,0 +1,4 @@
+# Let's tell Netlify about the directory where we'll
+# keep the serverless functions
+[functions]
+  directory = "hms-functions/"
