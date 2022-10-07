@@ -5,11 +5,10 @@ import (
 	// 	"github.com/gin-gonic/gin"
 	// "github.com/JakubPluta/go-projects/go-restaurant-management/routes"
 	// "github.com/JakubPluta/go-projects/go-restaurant-management/database"
-	// "github.com/JakubPluta/go-projects/go-restaurant-management/middleware"
+	"github.com/JakubPluta/go-projects/go-restaurant-management/middleware"
 	// "go.mongodb.org/mongo-driver/mongo"
 
 	"github.com/JakubPluta/go-projects/go-restaurant-management/database"
-	"github.com/JakubPluta/go-projects/go-restaurant-management/middleware"
 	"github.com/JakubPluta/go-projects/go-restaurant-management/routes"
 	"github.com/gin-gonic/gin"
 	"go.mongodb.org/mongo-driver/mongo"
@@ -23,7 +22,7 @@ func main() {
 	port := os.Getenv("PORT")
 
 	if port == "" {
-		port = "8000"
+		port = ":8000"
 	}
 
 	r := gin.New()
